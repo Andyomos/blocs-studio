@@ -1,0 +1,76 @@
+/* ==== Main Nav Bar ==== */
+.nav-controller{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 80px;
+    background-color: rgb(48, 63, 159);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+/* ==== Main Ul Li $ A Style Start ==== */
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+.nav-bar ul li {
+    padding-left: 16px;
+} 
+/* ==== Nav Model a included here ==== */
+.nav-bar a, .nav-model a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 300;  
+    display: block;   
+}
+/* ==== Nav Model a hover here ==== */
+.nav-bar a:hover, .nav-model a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+/* ==== Main Ul Li $ A Style End ==== */
+
+
+/* ==== Side Nav Model ==== */
+.nav-model{
+    display: none;
+    background-color: rgb(48, 63, 159);   
+    width: 160px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav-model ul{
+    list-style: none;
+}
+.nav-model a {
+    padding: 8px 0px;
+}
+
+/* ==== Side Nav Burger ==== */
+.nav-burger {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-controller{
+        justify-content: space-between !important;
+    }
+    .nav-bar{
+        display: none;
+    }
+
+    .nav-burger {
+        display: block;
+    }
+
+    .logo h1 {
+        padding-left: 30px;
+    }
+}

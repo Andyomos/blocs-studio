@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ==== Home Section Style Start ==== */
+.main{
+    max-height: 100vh;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;  
+    background: rgba(0, 0, 0, 0.8) url(../img/frontbg.jpg)no-repeat center left; 
+    background-size: cover; 
+    color: white;  
+}
+.row {
+    font-family: 'Roboto', sans-serif;  
+}
+.row-one, .row-two {
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 9rem;
+    background-color: rgba(0, 0, 0, 0.056);
+}
+.row-one h1, .row-two h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    padding-bottom: 5px;
+}
+.row-one h4 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+.row-one p, .row-two p{
+    max-width: 500px;
+    font-size: 1.3rem;
+    word-spacing: 1.5px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+.row-two {
+    display: flex;
+    align-items: center;
+    max-width: 80vh;
+}
+.row-two h4 {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+/* ==== Home Section Style End ==== */
+/* ==== Spacer ==== */
+.spacer-top {
+    margin-top: 1.5rem;
+}
+
+/* ==== Devide Nav/Canvas ==== */
+.divider {
+    height: 25px;
+    background-color: #1A237E;
+}
+
+/* ==== Canvas ==== */
+#myCanvas {
+    background-color: rgb(0, 0, 0);
+
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #myCanvas {
+        display: none;
+    }
+    .divider {
+        display: none;
+    }
+    .main {
+        display: block;
+        padding: 0 12px;
+    }
+    .row .spacer-top {
+        margin-top: 0rem;
+    }
+    .row-one, .row-two {
+        margin-bottom: 1rem;
+    }
+    .row-one {
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 856px) {
+    .main {
+        display: block;
+    }
+    .row-one, .row-two {
+        margin-bottom: 0rem;
+        padding-bottom: 1rem;
+    }
+    .row-one {
+        padding-top: 2.5rem;
+    }
+
+}
