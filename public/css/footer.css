@@ -1,0 +1,38 @@
+/* ==== Main Footer Bar ==== */
+.footer-controller{   
+    background-color: rgb(48, 63, 159);
+    color: white;    
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer-logo {
+    
+}
+
+/* ==== Main Ul Li $ A Style Start ==== */
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li {
+    padding-left: 16px;
+} 
+/* ==== Nav Model a included here ==== */
+.footer-links a, .nav-model a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 300;  
+    display: block;   
+}
+/* ==== Nav Model a hover here ==== */
+.footer-links a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+/* ==== Main Ul Li $ A Style End ==== */

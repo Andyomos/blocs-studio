@@ -1,0 +1,85 @@
+<script>
+    window.onload = function() {
+        const canvas = document.getElementById('myCanvas');
+        const c = canvas.getContext('2d');
+        canvas.width = innerWidth;
+        canvas.height = 300;
+
+        // ==== Resize the canvas to window dimensions ====
+        addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = 400;
+        });
+        // ==== Declaration of Global Variables ====
+        const mouse = {
+            x: undefined,
+            y: undefined,
+        }
+        let hue = 0;
+        let bubblesArray = [];
+        c.shadowOffsetY = 1.5;
+        // ==== Add EventListener to Canvas ====
+        canvas.addEventListener('click', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+            for (let i = 0; i < 20; i++) {
+                bubblesArray.push(new Bubble);
+            }
+        });
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+            for (let i = 0; i < 4; i++) {
+                bubblesArray.push(new Bubble);
+            }
+        });
+        // ==== Bubble Class Start ====
+        class Bubble {
+            constructor(){
+                this.x = mouse.x;
+                this.y = mouse.y;
+                this.size = Math.random() * 15;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = "hsl(" + hue + ", 100%, 50%)";
+            }
+            // === Update speed and directions ====
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if(this.size > 0.2) this.size -= 0.1;
+            }
+            // ==== Draw Bubble ====
+            draw() {
+                c.beginPath();
+                c.strokeStyle = this.color;
+                c.arc(this.x, this.y / c.shadowOffsetY, this.size, 0, Math.PI * 2, false);
+                c.stroke();
+                c.closePath();
+            }
+        }
+        // ==== Bubble Class End ====
+        // ==== Handle Bubble Arrays ====
+        const HandleBubbles = () => {
+            for (let i = 0; i < bubblesArray.length; i++) {
+                bubblesArray[i].draw();
+                bubblesArray[i].update();
+                if(bubblesArray[i].size <= 0.3){
+                    bubblesArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+        // ==== Animate Bubbles ====
+        const animate = () => {
+            c.clearRect(0, 0, canvas.width, canvas.height);
+            HandleBubbles();
+            requestAnimationFrame(animate);
+            hue += 5;
+        }
+        animate();
+
+        console.log(c.shadowOffsetY)
+        console.log(c)
+    }
+</script>

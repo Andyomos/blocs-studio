@@ -58,6 +58,13 @@
     display: none;
 }
 
+.nav-burger div{
+    background-color: white;
+    height: 2.5px;
+    width: 25px;
+    margin-top: 5px;
+}
+
 @media screen and (max-width: 768px) {
     .nav-controller{
         justify-content: space-between !important;
