@@ -4,7 +4,6 @@
         const c = canvas.getContext('2d');
         canvas.width = innerWidth;
         canvas.height = 300;
-
         // ==== Resize the canvas to window dimensions ====
         addEventListener('resize', () => {
             canvas.width = innerWidth;
@@ -78,8 +77,5 @@
             hue += 5;
         }
         animate();
-
-        console.log(c.shadowOffsetY)
-        console.log(c)
     }
 </script>
