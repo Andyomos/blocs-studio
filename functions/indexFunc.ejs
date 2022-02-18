@@ -4,11 +4,6 @@
         const c = canvas.getContext('2d');
         canvas.width = innerWidth;
         canvas.height = 300;
-        // ==== Resize the canvas to window dimensions ====
-        addEventListener('resize', () => {
-            canvas.width = innerWidth;
-            canvas.height = 400;
-        });
         // ==== Declaration of Global Variables ====
         const mouse = {
             x: undefined,
@@ -16,7 +11,12 @@
         }
         let hue = 0;
         let bubblesArray = [];
-        c.shadowOffsetY = 1.5;
+        c.shadowOffsetY = 1.7;
+        // ==== Resize the canvas to window dimensions ====
+        addEventListener('resize', () => {
+            canvas.width = innerWidth;
+            canvas.height = 400;
+        });
         // ==== Add EventListener to Canvas ====
         canvas.addEventListener('click', (e) => {
             mouse.x = e.x;
